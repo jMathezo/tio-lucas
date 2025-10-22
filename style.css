@@ -1,0 +1,397 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fae1dd;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #ab0000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: visible; /* Garante que a aba não seja cortada */
+    z-index: 1; /* Coloca o envelope atrás do card */
+}
+
+/* Criando a aba superior do envelope aberta */
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: -149px; /* Eleva a aba acima do envelope */
+    left: 0;
+    width: 300px;
+    height: 150px;
+    background-color: #ab0000; /* Cor da aba */
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%); /* Forma triangular */
+    transform: rotateX(40deg); /* Simula a abertura */
+    transform-origin: bottom;
+    z-index: 0; /* Coloca a aba atrás do card */
+}
+
+.card {
+    position: absolute;
+    background-color: #eae2b7;
+    width: 270px;
+    height: 170px;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+    z-index: 2; /* Coloca o card na frente do envelope */
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    border: 3px solid #003049;
+    border-style: dotted;
+    width: 240px;
+    height: 140px;
+    left: 12px;
+    top: 12px;body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fae1dd;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #ab0000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: visible; /* Garante que a aba não seja cortada */
+    z-index: 1; /* Coloca o envelope atrás do card */
+}
+
+/* Criando a aba superior do envelope aberta */
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: -149px; /* Eleva a aba acima do envelope */
+    left: 0;
+    width: 300px;
+    height: 150px;
+    background-color: #ab0000; /* Cor da aba */
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%); /* Forma triangular */
+    transform: rotateX(40deg); /* Simula a abertura */
+    transform-origin: bottom;
+    z-index: 0; /* Coloca a aba atrás do card */
+}
+
+.card {
+    position: absolute;
+    background-color: #eae2b7;
+    width: 270px;
+    height: 170px;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+    z-index: 2; /* Coloca o card na frente do envelope */
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    border: 3px solid #003049;
+    border-style: dotted;
+    width: 240px;
+    height: 140px;
+    left: 12px;
+    top: 12px;
+}
+
+.text {
+    position: absolute;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height: 25px;
+    top: 19px;
+    left: 62px;
+    color: #003049;
+}
+
+.heart {
+    background-color: #d62828;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 110px;
+    left: 105px;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #d62828;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.front {
+    position: absolute;
+    border-right: 180px solid #db4a3d;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.front:before {
+    content: "";
+    position: absolute;
+    border-left: 300px solid #db4a3d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+}
+
+.shadow {
+    position: absolute;
+    width: 250px; /* Ajuste fino para o tamanho do envelope */
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* Posicionando abaixo do envelope */
+    bottom: 150px; /* Ajustado para ficar abaixo do envelope */
+    transform: translateX(-50%);
+    
+    animation: scale 3s linear infinite;
+    z-index: -1;
+}
+
+
+
+/* Animações */
+@keyframes up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.85);
+    }
+}
+
+.fullscreen-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6c6969;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+}
+
+.text {
+    position: absolute;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height: 25px;
+    top: 19px;
+    left: 62px;
+    color: #003049;
+}
+
+.heart {
+    background-color: #d62828;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 110px;
+    left: 105px;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #d62828;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.front {
+    position: absolute;
+    border-right: 180px solid #db4a3d;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.front:before {
+    content: "";
+    position: absolute;
+    border-left: 300px solid #db4a3d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+}
+
+.shadow {
+    position: absolute;
+    width: 250px; /* Ajuste fino para o tamanho do envelope */
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* Posicionando abaixo do envelope */
+    bottom: 150px; /* Ajustado para ficar abaixo do envelope */
+    transform: translateX(-50%);
+    
+    animation: scale 3s linear infinite;
+    z-index: -1;
+}
+
+
+
+/* Animações */
+@keyframes up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.85);
+    }
+}
+
+.fullscreen-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6c6969;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
